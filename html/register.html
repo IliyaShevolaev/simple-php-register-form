@@ -4,29 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
+    <title>Регистрация</title>
 
-    <link rel="stylesheet" href="styles/register-style.css">
+    <link rel="stylesheet" href="../styles/register-style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="login-form">
-            <h2>Вход в систему</h2>
-            <form action="php/login.php" method="post">
+            <h2>Регистрация</h2>
+            <form action="../php/register.php" method="post">
                 <label for="username">Логин</label>
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required>
 
-                <button type="submit">Войти</button>
+                <button type="submit">Зарегистрироваться</button>
 
                 <div class="register-link">
-                    <span>Нет аккаунта?</span>
-                    <a href="html/register.html">Зарегистрироваться</a>
+                    <span>Уже есть аккаунт?</span>
+                    <a href="../index.html">Войти</a>
                 </div>
-
             </form>
         </div>
     </div>

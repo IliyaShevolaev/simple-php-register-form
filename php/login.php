@@ -16,7 +16,7 @@ if ($newConnection->connectTo()) {
     $resultArray = $newConnection->makeQuery($query);
 
     if (!empty($resultArray)) {
-        header("Location: /succsess.html");
+        header("Location: ../html/succsess.html");
         exit;
     } else {
         echo "Ошибка входа";

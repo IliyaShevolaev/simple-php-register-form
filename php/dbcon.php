@@ -5,12 +5,12 @@ class DbManager
     private $stringConnect;
     private $connect;
 
-    function __construct(string $stringConnect)
+    public function __construct(string $stringConnect)
     {
         $this->stringConnect = $stringConnect;
     }
 
-    function connectTo()
+    public function connectTo()
     {
         $this->connect = pg_connect($this->stringConnect);
         if ($this->connect) {
@@ -22,7 +22,7 @@ class DbManager
         return false;
     }
 
-    function insertTo(string $tableName, array $values)
+    public function insertTo(string $tableName, array $values)
     {
         if ($this->connect) {
             $insertResult = pg_insert($this->connect, $tableName, $values);
@@ -33,7 +33,7 @@ class DbManager
         }
     }
 
-    function makeQuery(string $query) 
+    public function makeQuery(string $query) 
     {
         $result = pg_query($this->connect, $query);
         if ($result) {
@@ -43,7 +43,7 @@ class DbManager
         return [];
     }
 
-    function closeConnection()
+    public function closeConnection()
     {
         if ($this->connect) {
             pg_close($this->connect);
