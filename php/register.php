@@ -11,10 +11,20 @@ $stringConnection = "host=localhost port=5432 dbname=registerdb user=postgres pa
 $newConnection = new DbManager($stringConnection);
 
 if ($newConnection->connectTo()) {
-    $newConnection->insertTo("userdata", $newUserArray);
+    $query = "SELECT * FROM userdata WHERE user_login = '" . $newUserArray["user_login"] . "' ";
+    $resultArray = $newConnection->makeQuery($query);
+
+    if (empty($resultArray)) {
+        $newConnection->insertTo("userdata", $newUserArray);
+    } else {
+        $newConnection->closeConnection();
+        header('Location: /html/register.php?loginExists=true');
+        exit;
+    }
+
 }
 
 $newConnection->closeConnection();
 
-header("Location: /index.html");
+header("Location: /index.php");
 exit;

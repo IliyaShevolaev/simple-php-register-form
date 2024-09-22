@@ -13,6 +13,13 @@
     <div class="container">
         <div class="login-form">
             <h2>Регистрация</h2>
+
+            <?php 
+                if (isset($_GET["loginExists"])) {
+                    echo '<div class="error-message">Такой логин уже существует!</div>';
+                }
+            ?>
+
             <form action="/php/register.php" method="post">
                 <label for="username">Логин</label>
                 <input type="text" id="username" name="username" required>
@@ -24,7 +31,7 @@
 
                 <div class="register-link">
                     <span>Уже есть аккаунт?</span>
-                    <a href="/index.html">Войти</a>
+                    <a href="/index.php">Войти</a>
                 </div>
             </form>
         </div>

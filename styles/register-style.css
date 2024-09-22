@@ -90,3 +90,12 @@ body {
     font-size: 14px;
     margin: 0;
 }
+
+.error-message {
+    color: #ff4d4d;
+    background-color: #ffcccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}

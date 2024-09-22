@@ -2,7 +2,7 @@
 
 class DbManager
 {
-    private $stringConnect;
+    private string $stringConnect;
     private $connect;
 
     public function __construct(string $stringConnect)

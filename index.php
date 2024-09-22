@@ -13,6 +13,13 @@
     <div class="container">
         <div class="login-form">
             <h2>Вход в систему</h2>
+
+            <?php 
+                if (isset($_GET["wrongData"])) {
+                    echo '<div class="error-message">Неверный логин или пароль</div>';
+                }
+            ?>
+
             <form action="php/login.php" method="post">
                 <label for="username">Логин</label>
                 <input type="text" id="username" name="username" required>
@@ -24,7 +31,7 @@
 
                 <div class="register-link">
                     <span>Нет аккаунта?</span>
-                    <a href="html/register.html">Зарегистрироваться</a>
+                    <a href="html/register.php">Зарегистрироваться</a>
                 </div>
 
             </form>

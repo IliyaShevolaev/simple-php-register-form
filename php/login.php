@@ -12,7 +12,6 @@ $newConnection = new DbManager($stringConnection);
 
 if ($newConnection->connectTo()) {
     $query = "SELECT * FROM userdata WHERE user_login = '" . $loginUser["user_login"] . "' ";
-    
     $resultArray = $newConnection->makeQuery($query);
 
     if (!empty($resultArray)) {
@@ -27,5 +26,6 @@ if ($newConnection->connectTo()) {
     } 
 }
 
-echo "Ошибка входа";
 $newConnection->closeConnection();
+header('Location: /index.php?wrongData=true');
+exit;
